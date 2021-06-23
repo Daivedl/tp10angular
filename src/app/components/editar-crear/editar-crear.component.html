@@ -1,0 +1,65 @@
+<div class="container">
+  <h1>{{texto}} Instrumento</h1>
+  <form>
+    <div class="form-group">
+      <label for="formId">ID</label>
+      <input [(ngModel)]="instrumento.id" name="instrumento.id" type="text" class="form-control" id="id"
+        placeholder="{{this.instrumento.id}}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="formInstrumento">Instrumento</label>
+
+      <input [(ngModel)]="instrumento.instrumento" name="instrumento.instrumento" type="text" class="form-control"
+        id="formInstrumento" placeholder="Ingrese el nombre..." required>
+    </div>
+    <div class="form-group">
+      <label for="formMarca">Marca</label>
+
+      <input [(ngModel)]="instrumento.marca" name="instrumento.marca" type="text" class="form-control" id="formMarca"
+        placeholder="Ingrese la marca..." required>
+    </div>
+    <div class="form-group">
+      <label for="formModelo">Modelo</label>
+
+      <input [(ngModel)]="instrumento.modelo" name="instrumento.modelo" type="text" class="form-control" id="formModelo"
+        placeholder="Ingrese el modelo..." required>
+    </div>
+    <div class="form-group">
+      <label for="formPrecio">Precio</label>
+
+      <input [(ngModel)]="instrumento.precio" name="instrumento.precio" type="number" class="form-control"
+        id="formPrecio" placeholder="Ingrese el precio..." required>
+    </div>
+    <div class="form-group">
+      <label for="formCostoEnvio">Costo de Envio</label>
+
+      <input [(ngModel)]="instrumento.costoEnvio" name="instrumento.costoEnvio" type="text" class="form-control"
+        id="formCostoEnvio" placeholder="Ingrese el costo de envio..." required>
+    </div>
+    <div class="form-group">
+      <label for="formCantidadVendida">Cantidad Vendida</label>
+
+      <input [(ngModel)]="instrumento.cantidadVendida" name="instrumento.cantidadVendida" type="number"
+        class="form-control" id="formCantidadVendida" placeholder="Ingrese la cantidad vendida..." required>
+    </div>
+    <div class="form-group">
+        <label for="formCantidadVendida">Imagen string</label>
+  
+        <input [(ngModel)]="instrumento.imagen" name="instrumento.imagen" type="text"
+          class="form-control" id="imagen" placeholder="Ingrese el string imagen" required>
+    </div>
+
+    <div class="form-group">
+      <label for="formTextArea">Descripcion</label>
+
+      <textarea [(ngModel)]="instrumento.descripcion" name="instrumento.descripcion" class="form-control"
+        id="formTextArea" rows="3" placeholder="Ingrese la descripcion..." required></textarea>
+    </div>
+    <div class="container">
+      <button type="button" class="btn btn-outline-success btn-block" (click)="onSubmit()">{{this.texto}}
+        Registro</button>
+      <button type="button" class="btn btn-outline-danger btn-block" [routerLink]="['/crud']">Cancelar
+        Registro</button>
+    </div>
+  </form>
+</div>

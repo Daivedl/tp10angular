@@ -1,0 +1,9 @@
+<h1>Nuestros Productos</h1>
+
+<div class="card-deck">
+  <app-item-producto (instrumentoSeleccionado)="verInstrumento($event)" 
+  *ngFor="let instrumentoLocal of instrumentosArr; let i = index" [instrumentoAux]="instrumentoLocal" 
+  [index]="instrumentoLocal.id">
+  </app-item-producto>
+
+</div>

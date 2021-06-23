@@ -1,0 +1,27 @@
+ <div class="container">
+   <div class="card mb-3" style="max-width: 540px;">
+     <div class="row g-0">
+       <div class="col-md-4">
+         <img src="../assets/images/{{instrumentoAux.imagen}}" class="card-img-top" alt="...">
+       </div>
+       <div class="col-md-8">
+         <div class="card-body">
+           <h5 class="card-title"> {{instrumentoAux.instrumento}} </h5>
+           <h2 class="card-text"> ${{instrumentoAux.precio}} </h2>
+           <h6 *ngIf="instrumentoAux.costoEnvio ==='G'">
+             <p [style.color]="'green'"><img [style.width]=20 [style.height]=20 src="../assets/images/camion.png"
+                 alt="d">Envío gratis a todo el país</p>
+           </h6>
+           <h6 *ngIf="instrumentoAux.costoEnvio !='G'">
+             <p [style.color]="'orange'">Costo de Envío Interior de Argentina: $ {{instrumentoAux.costoEnvio}} </p>
+           </h6>
+           <p> {{instrumentoAux.cantidadVendida}} vendidos </p>
+           <button type="button" class="btn btn-outline-primary btn-block"
+             (click)="redireccionar(this.instrumentoAux.id)">Ver
+             Instrumento</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+ </div>

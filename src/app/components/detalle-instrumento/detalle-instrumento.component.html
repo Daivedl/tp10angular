@@ -1,0 +1,26 @@
+<h1>{{this.instrumento.instrumento | uppercase}}</h1>
+<hr>
+<div class="row">
+  <div class="col-md-4" style="text-align: center">
+    <img src="assets/images/{{this.instrumento.imagen}}" style="max-width: 300px;" class="img-fluid"
+      [alt]="this.instrumento.instrumento">
+    <br><br>
+    <a [routerLink]="['/productos']" class="btn btn-outline-info btn-block">Regresar</a>
+  </div>
+  <div class="col-md-8">
+    <h3 style="color: crimson">{{this.instrumento.instrumento}}</h3>
+    <hr>
+    <p><b>Modelo:</b> {{this.instrumento.modelo}}</p>
+    <p><b>Marca:</b> {{this.instrumento.marca}}</p>
+    <p><b>Precio:</b> ${{this.instrumento.precio}}</p>
+    <p><b>Cantidad vendida: </b> {{this.instrumento.cantidadVendida}}</p>
+    <h6 *ngIf="this.instrumento.costoEnvio ==='G'">
+        <p [style.color]="'green'"><img [style.width]=20 [style.height]=20 src="../assets/images/camion.png" alt="d">Envío
+          gratis a todo el país</p>
+      </h6>
+      <h6 *ngIf="this.instrumento.costoEnvio !='G'">
+        <p [style.color]="'orange'">Costo de Envío Interior de Argentina: $ {{this.instrumento.costoEnvio}} </p>
+      </h6>
+
+  </div>
+</div>
